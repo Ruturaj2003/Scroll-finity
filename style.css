@@ -68,14 +68,18 @@ h3 {
 p{
 color: transparent;
 position:absolute;
-z-index: 3;
+z-index: 10;
 top: 270px;
 left:20px;
 padding:0 12px;
 height: full;
 transition-duration:500ms ;
+font-weight: bolder;
+
 
 }
+
+
 
 .dota:hover .descr {
 	color: white;
@@ -85,6 +89,7 @@ transition-duration:500ms ;
 .dota:hover{
 opacity: 0.7;
 transform: scale(1.03);
+
 }
 
 

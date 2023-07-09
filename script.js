@@ -1,4 +1,6 @@
-const imageContainer = document.getElementById('image-container');
+const imageContainer = document.getElementById(
+    'image-container'
+);
 const loader = document.getElementById('loader');
 
 let ready = false;
@@ -33,6 +35,17 @@ function displayPhotos() {
     totalImages = photosArray.length;
     // Run function for each object in photosArray
     photosArray.forEach((photo) => {
+        const container = document.createElement('div');
+        setAttributes(container, {
+            class: 'dota',
+        });
+
+        const description = document.createElement('p');
+        setAttributes(description, {
+            class: 'descr',
+        });
+        description.innerText = photo.alt_description;
+
         // Create <a> to link to full photo
         const item = document.createElement('a');
         setAttributes(item, {
@@ -44,13 +57,17 @@ function displayPhotos() {
         setAttributes(img, {
             src: photo.urls.regular,
             alt: photo.alt_description,
-            title: photo.alt_description,
+            // title: photo.alt_description,
         });
         // Event Listener, check when each is finished loading
         img.addEventListener('load', imageLoaded);
         // Put <img> inside <a>, then put both inside imageContainer Element
+
         item.appendChild(img);
-        imageContainer.appendChild(item);
+        container.appendChild(description);
+        container.appendChild(item);
+
+        imageContainer.appendChild(container);
     });
 }
 
@@ -67,7 +84,11 @@ async function getPhotos() {
 
 // Check to see if scrolling near bottom of page, Load More Photos
 window.addEventListener('scroll', () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready) {
+    if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 1000 &&
+        ready
+    ) {
         ready = false;
         getPhotos();
     }
