@@ -30,45 +30,75 @@ h3 {
 /* Loader */
 .loader {
 	position: fixed;
-	top:0;
+	top: 0;
 	bottom: 0;
-	left:0;
+	left: 0;
 	right: 0;
-	background:rgba(255,255,230,0.8);
+	background: rgba(255, 255, 230, 0.8);
 }
 
 .loader img {
 	position: fixed;
-	top:50%;
-	left:50%;
-	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
-
 
 /* Image Container */
 .image-container {
 	margin: 15px 30%;
-	
+	position: absolute;
 }
 
 .image-container img {
 	width: 100%;
 	margin-top: 15px;
-	box-shadow: rgba(255, 0, 0, 0.16) 0px 3px 6px, rgba(215, 0, 0, 0.23) 0px 3px 6px;
+	box-shadow: rgba(255, 0, 0, 0.16) 0px 3px 6px,
+		rgba(215, 0, 0, 0.23) 0px 3px 6px;
 	border-radius: 12px;
+	position: relative;
+	transition-duration: 400ms;
+	
 }
 
-/* Media Query: Large smartphones */
-@media screen and (max-width:600px) {
-	h1 {
-		font-size:23px ;
-	}
+.dota{
+	transition-duration: 400ms;
+}
+
+p{
+color: transparent;
+position:absolute;
+z-index: 3;
+top: 270px;
+left:20px;
+padding:0 12px;
+height: full;
+transition-duration:500ms ;
+
+}
+
+.dota:hover .descr {
+	color: white;
 	
-	h3{
+
+}
+.dota:hover{
+opacity: 0.7;
+transform: scale(1.03);
+}
+
+
+/* Media Query: Large smartphones */
+@media screen and (max-width: 600px) {
+	h1 {
+		font-size: 23px;
+	}
+
+	h3 {
 		font-size: 10px;
 	}
 
-		.image-container {
-			margin: 14px;
-		}
+	.image-container {
+		margin: 14px;
+	}
 }
