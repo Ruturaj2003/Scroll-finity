@@ -47,13 +47,13 @@ h3 {
 
 /* Image Container */
 .image-container {
-	margin: 10px 30%;
+	margin: 15px 30%;
 	
 }
 
 .image-container img {
 	width: 100%;
-	margin-top: 5px;
+	margin-top: 15px;
 	box-shadow: rgba(255, 0, 0, 0.16) 0px 3px 6px, rgba(215, 0, 0, 0.23) 0px 3px 6px;
 	border-radius: 12px;
 }
